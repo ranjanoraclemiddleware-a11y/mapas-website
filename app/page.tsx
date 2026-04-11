@@ -77,7 +77,7 @@ export default function Home() {
           </h1>
 
           <p style={{ marginTop: "20px", color: "#ccc" }}>
-            WCC, Imaging, SOA, OIC, EBS, OCI & AI Solutions
+            WCC, WCC Imaging, SOA, OIC, EBS, OCI & AI Solutions
           </p>
 
           <div style={{ marginTop: "30px", display: "flex", gap: "20px" }}>
