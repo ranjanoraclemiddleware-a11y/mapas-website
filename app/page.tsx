@@ -9,24 +9,26 @@ export default function Home() {
     width: "100%",
     padding: "10px",
     marginTop: "10px",
-    background: "#000",
+    background: "#020617",
     color: "#fff",
-    border: "1px solid #333",
+    border: "1px solid #334155",
     borderRadius: "6px"
   };
 
   const cardStyle = {
-    background: "#111",
+    background: "rgba(255,255,255,0.05)",
     padding: "24px",
     borderRadius: "12px",
     transition: "0.3s",
-    cursor: "pointer"
+    cursor: "pointer",
+    border: "1px solid rgba(255,255,255,0.1)",
+    backdropFilter: "blur(10px)"
   };
 
   const handleMouseOver = (e: any) => {
     e.currentTarget.style.boxShadow =
-      "0 0 25px rgba(34,197,94,0.7)";
-    e.currentTarget.style.transform = "translateY(-5px)";
+      "0 0 25px rgba(34,197,94,0.6)";
+    e.currentTarget.style.transform = "translateY(-6px)";
   };
 
   const handleMouseOut = (e: any) => {
@@ -35,23 +37,56 @@ export default function Home() {
   };
 
   return (
-    <div style={{ background: "#000", color: "#fff", minHeight: "100vh" }}>
-
+    <div
+      style={{
+        background: "linear-gradient(135deg, #020617, #0f172a, #020617)",
+        color: "#fff",
+        minHeight: "100vh"
+      }}
+    >
       {/* NAVBAR */}
       <div
         style={{
           display: "flex",
           justifyContent: "space-between",
           padding: "20px 40px",
-          borderBottom: "1px solid #1f2937"
+          borderBottom: "1px solid #1f2937",
+          position: "sticky",
+          top: 0,
+          background: "rgba(0,0,0,0.6)",
+          backdropFilter: "blur(10px)",
+          zIndex: 10
         }}
       >
-        <h2>MAPAS</h2>
-        <div style={{ display: "flex", gap: "20px" }}>
-          <span>Services</span>
-          <span>Solutions</span>
-          <span>About</span>
-          <span>Contact</span>
+        <h2
+          style={{ cursor: "pointer" }}
+          onClick={() =>
+            window.scrollTo({ top: 0, behavior: "smooth" })
+          }
+        >
+          MAPAS
+        </h2>
+
+        <div style={{ display: "flex", gap: "20px", cursor: "pointer" }}>
+          <span
+            onClick={() =>
+              document
+                .getElementById("services")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
+          >
+            Services
+          </span>
+
+          <span onClick={() => alert("Solutions page coming soon")}>
+            Solutions
+          </span>
+
+          <span onClick={() => alert("About page coming soon")}>
+            About
+          </span>
+
+          <span onClick={() => setShowForm(true)}>Contact</span>
         </div>
       </div>
 
@@ -77,11 +112,12 @@ export default function Home() {
           <button
             onClick={() => setShowForm(true)}
             style={{
-              background: "#22c55e",
+              background: "linear-gradient(90deg, #22c55e, #16a34a)",
               padding: "12px 24px",
               border: "none",
               borderRadius: "8px",
-              cursor: "pointer"
+              cursor: "pointer",
+              fontWeight: "bold"
             }}
           >
             Get Free Consultation
@@ -107,7 +143,7 @@ export default function Home() {
       </div>
 
       {/* SERVICES */}
-      <div style={{ padding: "40px" }}>
+      <div id="services" style={{ padding: "40px" }}>
         <h2 style={{ marginBottom: "30px" }}>Our Services</h2>
 
         <div
@@ -149,7 +185,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* CONTACT FORM POPUP */}
+      {/* CONTACT FORM */}
       {showForm && (
         <div
           style={{
@@ -166,7 +202,7 @@ export default function Home() {
         >
           <div
             style={{
-              background: "#111",
+              background: "#020617",
               padding: "30px",
               borderRadius: "12px",
               width: "400px"
