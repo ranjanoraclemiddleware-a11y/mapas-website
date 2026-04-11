@@ -128,7 +128,7 @@ export default function Home() {
           }}
         >
           {[
-            "Oracle WCC",
+            "OracleWCC",
             "Imaging & AP Automation",
             "SOA & OIC",
             "EBS & ERP",
