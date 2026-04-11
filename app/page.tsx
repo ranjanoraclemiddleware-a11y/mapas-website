@@ -37,7 +37,7 @@ export default function Home() {
   };
 
   return (
-    <div style={{ color: "#fff" }}>
+    <div style={{ color: "#fff", fontFamily: "sans-serif" }}>
 
       {/* NAVBAR */}
       <div
@@ -63,49 +63,22 @@ export default function Home() {
         </h2>
 
         <div style={{ display: "flex", gap: "20px" }}>
-          <span
-            onClick={() =>
-              document
-                .getElementById("services")
-                ?.scrollIntoView({ behavior: "smooth" })
-            }
-            style={{ cursor: "pointer" }}
-          >
+          <span onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })} style={{ cursor: "pointer" }}>
             Services
           </span>
-
-          <span
-            onClick={() =>
-              document
-                .getElementById("solutions")
-                ?.scrollIntoView({ behavior: "smooth" })
-            }
-            style={{ cursor: "pointer" }}
-          >
+          <span onClick={() => document.getElementById("solutions")?.scrollIntoView({ behavior: "smooth" })} style={{ cursor: "pointer" }}>
             Solutions
           </span>
-
-          <span
-            onClick={() =>
-              document
-                .getElementById("about")
-                ?.scrollIntoView({ behavior: "smooth" })
-            }
-            style={{ cursor: "pointer" }}
-          >
+          <span onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })} style={{ cursor: "pointer" }}>
             About
           </span>
-
-          <span
-            onClick={() => setShowForm(true)}
-            style={{ cursor: "pointer" }}
-          >
+          <span onClick={() => setShowForm(true)} style={{ cursor: "pointer" }}>
             Contact
           </span>
         </div>
       </div>
 
-      {/* HERO SECTION */}
+      {/* HERO */}
       <div
         style={{
           height: "100vh",
@@ -119,7 +92,6 @@ export default function Home() {
           padding: "0 60px"
         }}
       >
-        {/* Overlay */}
         <div
           style={{
             position: "absolute",
@@ -128,27 +100,28 @@ export default function Home() {
             width: "100%",
             height: "100%",
             background:
-              "linear-gradient(to right, rgba(2,6,23,0.9), rgba(2,6,23,0.6))"
+              "linear-gradient(to right, rgba(2,6,23,0.95), rgba(2,6,23,0.7))"
           }}
         />
 
-        {/* Content */}
-        <div style={{ position: "relative", maxWidth: "600px" }}>
-          <h1 style={{ fontSize: "64px", fontWeight: "bold" }}>
-            AI / ML MODEL <br /> DEVELOPMENT
+        <div style={{ position: "relative", maxWidth: "700px" }}>
+          <h1 style={{ fontSize: "56px", fontWeight: "bold" }}>
+            Oracle Fusion Middleware <br />
+            & Cloud Consulting Services
           </h1>
 
           <div
             style={{
               height: "4px",
-              width: "100px",
+              width: "120px",
               background: "#22c55e",
               margin: "20px 0"
             }}
           />
 
           <p style={{ fontSize: "18px", color: "#cbd5f5" }}>
-            Designing and deploying AI/ML models that deliver real business value.
+            WebCenter Content, Imaging, AP Automation, SOA, OIC, EBS & OCI —
+            Implementation, Upgrade & Optimization Experts
           </p>
 
           <div style={{ marginTop: "30px", display: "flex", gap: "20px" }}>
@@ -159,7 +132,8 @@ export default function Home() {
                 padding: "12px 24px",
                 border: "none",
                 borderRadius: "8px",
-                cursor: "pointer"
+                cursor: "pointer",
+                fontWeight: "bold"
               }}
             >
               Get Free Consultation
@@ -183,6 +157,10 @@ export default function Home() {
               Explore Services
             </button>
           </div>
+
+          <p style={{ marginTop: "20px", color: "#94a3b8" }}>
+            Helping enterprises modernize Oracle systems with Automation & GenAI
+          </p>
         </div>
       </div>
 
@@ -190,31 +168,40 @@ export default function Home() {
       <div id="services" style={{ padding: "60px", background: "#020617" }}>
         <h2>Our Services</h2>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-            gap: "20px",
-            marginTop: "20px"
-          }}
-        >
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+          gap: "20px",
+          marginTop: "20px"
+        }}>
           <div style={cardStyle} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-            Oracle WCC
+            <h3>WebCenter Content</h3>
+            <p>Content, Capture, Imaging, Workflow</p>
           </div>
+
           <div style={cardStyle} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-            Middleware
+            <h3>Imaging & WFR</h3>
+            <p>AP Automation, Invoice Processing</p>
           </div>
+
           <div style={cardStyle} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-            Identity
+            <h3>SOA / OIC / OSB</h3>
+            <p>Integration & Process Automation</p>
           </div>
+
           <div style={cardStyle} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-            ERP
+            <h3>Oracle EBS</h3>
+            <p>Customization & Support</p>
           </div>
+
           <div style={cardStyle} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-            Cloud (OCI)
+            <h3>OCI Cloud</h3>
+            <p>Migration & Architecture</p>
           </div>
+
           <div style={cardStyle} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-            AI / GenAI
+            <h3>GenAI Solutions</h3>
+            <p>AI Automation & Smart Processing</p>
           </div>
         </div>
       </div>
@@ -228,24 +215,25 @@ export default function Home() {
       {/* ABOUT */}
       <div id="about" style={{ padding: "60px" }}>
         <h2>About Us</h2>
-        <p>We help enterprises modernize Oracle systems and adopt AI-driven solutions.</p>
+        <p>
+          We specialize in Oracle Fusion Middleware, helping enterprises
+          modernize legacy systems and adopt cloud & AI-driven solutions.
+        </p>
       </div>
 
       {/* CONTACT FORM */}
       {showForm && (
-        <div
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            background: "rgba(0,0,0,0.8)",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center"
-          }}
-        >
+        <div style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          background: "rgba(0,0,0,0.8)",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center"
+        }}>
           <div style={{ background: "#020617", padding: "30px", borderRadius: "12px", width: "400px" }}>
             <h2>Contact Us</h2>
 
@@ -254,7 +242,12 @@ export default function Home() {
             <input placeholder="Phone" style={inputStyle} />
             <textarea placeholder="Your Requirement" style={inputStyle} />
 
-            <button style={{ background: "#22c55e", padding: "10px", width: "100%", marginTop: "10px" }}>
+            <button style={{
+              background: "#22c55e",
+              padding: "10px",
+              width: "100%",
+              marginTop: "10px"
+            }}>
               Submit
             </button>
 
