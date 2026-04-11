@@ -37,25 +37,20 @@ export default function Home() {
   };
 
   return (
-    <div
-      style={{
-        background: "linear-gradient(135deg, #020617, #0f172a, #020617)",
-        color: "#fff",
-        minHeight: "100vh"
-      }}
-    >
+    <div style={{ color: "#fff" }}>
+
       {/* NAVBAR */}
       <div
         style={{
           display: "flex",
           justifyContent: "space-between",
           padding: "20px 40px",
-          borderBottom: "1px solid #1f2937",
-          position: "sticky",
+          position: "fixed",
+          width: "100%",
           top: 0,
+          zIndex: 10,
           background: "rgba(0,0,0,0.6)",
-          backdropFilter: "blur(10px)",
-          zIndex: 10
+          backdropFilter: "blur(10px)"
         }}
       >
         <h2
@@ -67,122 +62,173 @@ export default function Home() {
           MAPAS
         </h2>
 
-        <div style={{ display: "flex", gap: "20px", cursor: "pointer" }}>
+        <div style={{ display: "flex", gap: "20px" }}>
           <span
             onClick={() =>
               document
                 .getElementById("services")
                 ?.scrollIntoView({ behavior: "smooth" })
             }
+            style={{ cursor: "pointer" }}
           >
             Services
           </span>
 
-          <span onClick={() => alert("Solutions page coming soon")}>
+          <span
+            onClick={() =>
+              document
+                .getElementById("solutions")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
+            style={{ cursor: "pointer" }}
+          >
             Solutions
           </span>
 
-          <span onClick={() => alert("About page coming soon")}>
+          <span
+            onClick={() =>
+              document
+                .getElementById("about")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
+            style={{ cursor: "pointer" }}
+          >
             About
           </span>
 
-          <span onClick={() => setShowForm(true)}>Contact</span>
+          <span
+            onClick={() => setShowForm(true)}
+            style={{ cursor: "pointer" }}
+          >
+            Contact
+          </span>
         </div>
       </div>
 
-      {/* HERO */}
-      <div style={{ textAlign: "center", padding: "100px 20px" }}>
-        <h1 style={{ fontSize: "48px", fontWeight: "bold" }}>
-          Upgrade Your Oracle Systems.<br />
-          Automate Your Business. Scale Faster.
-        </h1>
-
-        <p style={{ color: "#9ca3af", marginTop: "20px" }}>
-          Oracle WCC, Middleware, Cloud (OCI) & AI Solutions — All in One Place
-        </p>
-
+      {/* HERO SECTION */}
+      <div
+        style={{
+          height: "100vh",
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1677442136019-21780ecad995')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          position: "relative",
+          display: "flex",
+          alignItems: "center",
+          padding: "0 60px"
+        }}
+      >
+        {/* Overlay */}
         <div
           style={{
-            marginTop: "30px",
-            display: "flex",
-            gap: "20px",
-            justifyContent: "center"
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            background:
+              "linear-gradient(to right, rgba(2,6,23,0.9), rgba(2,6,23,0.6))"
           }}
-        >
-          <button
-            onClick={() => setShowForm(true)}
-            style={{
-              background: "linear-gradient(90deg, #22c55e, #16a34a)",
-              padding: "12px 24px",
-              border: "none",
-              borderRadius: "8px",
-              cursor: "pointer",
-              fontWeight: "bold"
-            }}
-          >
-            Get Free Consultation
-          </button>
+        />
 
-          <button
+        {/* Content */}
+        <div style={{ position: "relative", maxWidth: "600px" }}>
+          <h1 style={{ fontSize: "64px", fontWeight: "bold" }}>
+            AI / ML MODEL <br /> DEVELOPMENT
+          </h1>
+
+          <div
             style={{
-              background: "transparent",
-              border: "1px solid #fff",
-              padding: "12px 24px",
-              borderRadius: "8px",
-              color: "#fff",
-              cursor: "pointer"
+              height: "4px",
+              width: "100px",
+              background: "#22c55e",
+              margin: "20px 0"
             }}
-          >
-            Explore Services
-          </button>
+          />
+
+          <p style={{ fontSize: "18px", color: "#cbd5f5" }}>
+            Designing and deploying AI/ML models that deliver real business value.
+          </p>
+
+          <div style={{ marginTop: "30px", display: "flex", gap: "20px" }}>
+            <button
+              onClick={() => setShowForm(true)}
+              style={{
+                background: "#22c55e",
+                padding: "12px 24px",
+                border: "none",
+                borderRadius: "8px",
+                cursor: "pointer"
+              }}
+            >
+              Get Free Consultation
+            </button>
+
+            <button
+              onClick={() =>
+                document
+                  .getElementById("services")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
+              style={{
+                background: "transparent",
+                border: "1px solid #fff",
+                padding: "12px 24px",
+                borderRadius: "8px",
+                color: "#fff",
+                cursor: "pointer"
+              }}
+            >
+              Explore Services
+            </button>
+          </div>
         </div>
-
-        <p style={{ marginTop: "20px", color: "#6b7280" }}>
-          Trusted for Oracle WCC, Middleware & Cloud Transformations
-        </p>
       </div>
 
       {/* SERVICES */}
-      <div id="services" style={{ padding: "40px" }}>
-        <h2 style={{ marginBottom: "30px" }}>Our Services</h2>
+      <div id="services" style={{ padding: "60px", background: "#020617" }}>
+        <h2>Our Services</h2>
 
         <div
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-            gap: "20px"
+            gap: "20px",
+            marginTop: "20px"
           }}
         >
           <div style={cardStyle} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-            <h3>Oracle WCC</h3>
-            <p>Content, Imaging, Capture, Workflow</p>
+            Oracle WCC
           </div>
-
           <div style={cardStyle} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-            <h3>Middleware</h3>
-            <p>SOA, OIC, OSB Integration</p>
+            Middleware
           </div>
-
           <div style={cardStyle} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-            <h3>Identity</h3>
-            <p>OIM, OAM Security</p>
+            Identity
           </div>
-
           <div style={cardStyle} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-            <h3>ERP</h3>
-            <p>Oracle EBS Solutions</p>
+            ERP
           </div>
-
           <div style={cardStyle} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-            <h3>Cloud (OCI)</h3>
-            <p>Migration & Architecture</p>
+            Cloud (OCI)
           </div>
-
           <div style={cardStyle} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-            <h3>AI</h3>
-            <p>GenAI, Automation, Smart Workflows</p>
+            AI / GenAI
           </div>
         </div>
+      </div>
+
+      {/* SOLUTIONS */}
+      <div id="solutions" style={{ padding: "60px" }}>
+        <h2>Solutions</h2>
+        <p>Enterprise Automation, AI Workflows, Digital Transformation</p>
+      </div>
+
+      {/* ABOUT */}
+      <div id="about" style={{ padding: "60px" }}>
+        <h2>About Us</h2>
+        <p>We help enterprises modernize Oracle systems and adopt AI-driven solutions.</p>
       </div>
 
       {/* CONTACT FORM */}
@@ -200,14 +246,7 @@ export default function Home() {
             alignItems: "center"
           }}
         >
-          <div
-            style={{
-              background: "#020617",
-              padding: "30px",
-              borderRadius: "12px",
-              width: "400px"
-            }}
-          >
+          <div style={{ background: "#020617", padding: "30px", borderRadius: "12px", width: "400px" }}>
             <h2>Contact Us</h2>
 
             <input placeholder="Your Name" style={inputStyle} />
@@ -215,27 +254,11 @@ export default function Home() {
             <input placeholder="Phone" style={inputStyle} />
             <textarea placeholder="Your Requirement" style={inputStyle} />
 
-            <button
-              style={{
-                background: "#22c55e",
-                padding: "10px",
-                width: "100%",
-                border: "none",
-                marginTop: "10px",
-                borderRadius: "6px"
-              }}
-            >
+            <button style={{ background: "#22c55e", padding: "10px", width: "100%", marginTop: "10px" }}>
               Submit
             </button>
 
-            <button
-              onClick={() => setShowForm(false)}
-              style={{
-                marginTop: "10px",
-                width: "100%",
-                padding: "10px"
-              }}
-            >
+            <button onClick={() => setShowForm(false)} style={{ marginTop: "10px", width: "100%" }}>
               Close
             </button>
           </div>
