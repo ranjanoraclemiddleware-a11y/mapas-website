@@ -1,19 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Particles from "@tsparticles/react";
-import { loadSlim } from "tsparticles-slim";
+import { useState } from "react";
 
 export default function Home() {
   const [showForm, setShowForm] = useState(false);
-  const [init, setInit] = useState(false);
-
-  // Load particles safely
-  useEffect(() => {
-    loadSlim(window.tsParticles).then(() => {
-      setInit(true);
-    });
-  }, []);
 
   return (
     <div style={{ fontFamily: "Arial", color: "white" }}>
@@ -35,49 +25,31 @@ export default function Home() {
 
         <div style={{ display: "flex", gap: "20px", cursor: "pointer" }}>
           <span onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}>Services</span>
-          <span onClick={() => document.getElementById("solutions")?.scrollIntoView({ behavior: "smooth" })}>Solutions</span>
           <span onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}>About</span>
           <span onClick={() => setShowForm(true)}>Contact</span>
         </div>
       </nav>
 
       {/* HERO */}
-      <div style={{ height: "100vh", position: "relative" }}>
-        
-        {init && (
-          <Particles
-            options={{
-              background: { color: "#020617" },
-              particles: {
-                number: { value: 50 },
-                size: { value: 3 },
-                move: { enable: true, speed: 1 },
-                links: {
-                  enable: true,
-                  distance: 150,
-                  color: "#22c55e"
-                },
-                color: { value: "#22c55e" }
-              }
-            }}
-          />
-        )}
-
-        <div
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "10%",
-            transform: "translateY(-50%)"
-          }}
-        >
-          <h1 style={{ fontSize: "50px" }}>
+      <div
+        style={{
+          height: "100vh",
+          display: "flex",
+          alignItems: "center",
+          paddingLeft: "10%",
+          background: "linear-gradient(-45deg, #020617, #0f172a, #020617, #020617)",
+          backgroundSize: "400% 400%",
+          animation: "gradientMove 10s ease infinite"
+        }}
+      >
+        <div>
+          <h1 style={{ fontSize: "52px", fontWeight: "bold" }}>
             Oracle Middleware <br />
             Consulting Services
           </h1>
 
           <p style={{ marginTop: "20px", color: "#ccc" }}>
-            WCC, WC Imaging, SOA, OIC, EBS, OCI & AI Solutions
+            WebCenter Content, Imaging, SOA, OIC, EBS, OCI & AI Solutions
           </p>
 
           <div style={{ marginTop: "30px", display: "flex", gap: "20px" }}>
@@ -126,10 +98,10 @@ export default function Home() {
         >
           {[
             "Oracle WCC",
-            "Middleware",
-            "Identity",
-            "ERP",
-            "Cloud (OCI)",
+            "Imaging & AP Automation",
+            "SOA & OIC",
+            "EBS & ERP",
+            "OCI Cloud",
             "Generative AI"
           ].map((item) => (
             <div
@@ -173,9 +145,9 @@ export default function Home() {
           <div style={{ background: "#111", padding: "30px" }}>
             <h2>Contact Us</h2>
 
-            <input placeholder="Name" style={{ display: "block", margin: "10px" }} />
-            <input placeholder="Email" style={{ display: "block", margin: "10px" }} />
-            <textarea placeholder="Message" style={{ display: "block", margin: "10px" }} />
+            <input placeholder="Name" style={{ display: "block", margin: "10px", padding: "10px" }} />
+            <input placeholder="Email" style={{ display: "block", margin: "10px", padding: "10px" }} />
+            <textarea placeholder="Message" style={{ display: "block", margin: "10px", padding: "10px" }} />
 
             <button style={{ background: "#22c55e", padding: "10px" }}>
               Send
@@ -185,6 +157,17 @@ export default function Home() {
           </div>
         </div>
       )}
+
+      {/* ANIMATION STYLE */}
+      <style>
+        {`
+          @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+          }
+        `}
+      </style>
     </div>
   );
 }
