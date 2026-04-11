@@ -17,8 +17,9 @@ export default function Home() {
           display: "flex",
           justifyContent: "space-between",
           padding: "20px 40px",
-          background: "rgba(0,0,0,0.6)",
-          zIndex: 10
+          background: "rgba(0,0,0,0.5)",
+          zIndex: 10,
+          backdropFilter: "blur(10px)"
         }}
       >
         <h2>MAPAS</h2>
@@ -30,56 +31,86 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* HERO */}
-      <div
-        style={{
-          height: "100vh",
-          display: "flex",
-          alignItems: "center",
-          paddingLeft: "10%",
-          background: "linear-gradient(-45deg, #020617, #0f172a, #020617, #020617)",
-          backgroundSize: "400% 400%",
-          animation: "gradientMove 10s ease infinite"
-        }}
-      >
-        <div>
-          <h1 style={{ fontSize: "52px", fontWeight: "bold" }}>
-            Oracle Middleware <br />
-            Consulting Services
-          </h1>
+      {/* HERO WITH VIDEO */}
+      <div style={{ position: "relative", height: "100vh", overflow: "hidden" }}>
+        
+        {/* VIDEO BACKGROUND */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          style={{
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            zIndex: -2
+          }}
+        >
+          <source src="/videos/ai-bg.mp4" type="video/mp4" />
+        </video>
 
-          <p style={{ marginTop: "20px", color: "#ccc" }}>
-            WebCenter Content, Imaging, SOA, OIC, EBS, OCI & AI Solutions
-          </p>
+        {/* DARK OVERLAY */}
+        <div
+          style={{
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+            background: "rgba(0,0,0,0.6)",
+            zIndex: -1
+          }}
+        />
 
-          <div style={{ marginTop: "30px", display: "flex", gap: "20px" }}>
-            <button
-              onClick={() => setShowForm(true)}
-              style={{
-                background: "#22c55e",
-                padding: "12px 24px",
-                border: "none",
-                borderRadius: "6px",
-                cursor: "pointer"
-              }}
-            >
-              Get Free Consultation
-            </button>
+        {/* CONTENT */}
+        <div
+          style={{
+            height: "100%",
+            display: "flex",
+            alignItems: "center",
+            paddingLeft: "10%"
+          }}
+        >
+          <div>
+            <h1 style={{ fontSize: "56px", fontWeight: "bold", lineHeight: "1.2" }}>
+              Oracle Middleware <br />
+              Consulting Services
+            </h1>
 
-            <button
-              onClick={() =>
-                document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })
-              }
-              style={{
-                border: "1px solid white",
-                padding: "12px 24px",
-                background: "transparent",
-                color: "white",
-                cursor: "pointer"
-              }}
-            >
-              Explore Services
-            </button>
+            <p style={{ marginTop: "20px", color: "#ddd", maxWidth: "500px" }}>
+              WebCenter Content, Imaging, AP Automation, SOA, OIC, EBS, OCI & Generative AI Solutions
+            </p>
+
+            <div style={{ marginTop: "30px", display: "flex", gap: "20px" }}>
+              <button
+                onClick={() => setShowForm(true)}
+                style={{
+                  background: "#22c55e",
+                  padding: "12px 24px",
+                  border: "none",
+                  borderRadius: "6px",
+                  cursor: "pointer",
+                  fontWeight: "bold"
+                }}
+              >
+                Get Free Consultation
+              </button>
+
+              <button
+                onClick={() =>
+                  document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })
+                }
+                style={{
+                  border: "1px solid white",
+                  padding: "12px 24px",
+                  background: "transparent",
+                  color: "white",
+                  cursor: "pointer"
+                }}
+              >
+                Explore Services
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -142,32 +173,23 @@ export default function Home() {
             alignItems: "center"
           }}
         >
-          <div style={{ background: "#111", padding: "30px" }}>
+          <div style={{ background: "#111", padding: "30px", borderRadius: "10px" }}>
             <h2>Contact Us</h2>
 
-            <input placeholder="Name" style={{ display: "block", margin: "10px", padding: "10px" }} />
-            <input placeholder="Email" style={{ display: "block", margin: "10px", padding: "10px" }} />
-            <textarea placeholder="Message" style={{ display: "block", margin: "10px", padding: "10px" }} />
+            <input placeholder="Name" style={{ display: "block", margin: "10px", padding: "10px", width: "250px" }} />
+            <input placeholder="Email" style={{ display: "block", margin: "10px", padding: "10px", width: "250px" }} />
+            <textarea placeholder="Message" style={{ display: "block", margin: "10px", padding: "10px", width: "250px" }} />
 
-            <button style={{ background: "#22c55e", padding: "10px" }}>
+            <button style={{ background: "#22c55e", padding: "10px", border: "none" }}>
               Send
             </button>
 
-            <button onClick={() => setShowForm(false)}>Close</button>
+            <button onClick={() => setShowForm(false)} style={{ marginLeft: "10px" }}>
+              Close
+            </button>
           </div>
         </div>
       )}
-
-      {/* ANIMATION STYLE */}
-      <style>
-        {`
-          @keyframes gradientMove {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-          }
-        `}
-      </style>
     </div>
   );
 }
