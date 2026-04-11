@@ -1,20 +1,24 @@
 "use client";
 
-import { useState } from "react";
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
+import { useEffect, useState } from "react";
+import Particles from "@tsparticles/react";
+import { loadSlim } from "tsparticles-slim";
 
 export default function Home() {
   const [showForm, setShowForm] = useState(false);
+  const [init, setInit] = useState(false);
 
-  const particlesInit = async (main: any) => {
-    await loadFull(main);
-  };
+  // Load particles safely
+  useEffect(() => {
+    loadSlim(window.tsParticles).then(() => {
+      setInit(true);
+    });
+  }, []);
 
   return (
-    <div style={{ fontFamily: "Arial, sans-serif", color: "white" }}>
+    <div style={{ fontFamily: "Arial", color: "white" }}>
       
-      {/* ================= NAVBAR ================ */}
+      {/* NAVBAR */}
       <nav
         style={{
           position: "fixed",
@@ -22,10 +26,9 @@ export default function Home() {
           width: "100%",
           display: "flex",
           justifyContent: "space-between",
-          padding: "20px 50px",
-          zIndex: 10,
+          padding: "20px 40px",
           background: "rgba(0,0,0,0.6)",
-          backdropFilter: "blur(10px)"
+          zIndex: 10
         }}
       >
         <h2>MAPAS</h2>
@@ -38,45 +41,43 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* ================= HERO ================= */}
+      {/* HERO */}
       <div style={{ height: "100vh", position: "relative" }}>
         
-        {/* PARTICLES */}
-        <Particles
-          init={particlesInit}
-          options={{
-            background: { color: "#020617" },
-            particles: {
-              number: { value: 60 },
-              size: { value: 3 },
-              move: { enable: true, speed: 1 },
-              links: {
-                enable: true,
-                color: "#22c55e",
-                distance: 150
-              },
-              color: { value: "#22c55e" }
-            }
-          }}
-        />
+        {init && (
+          <Particles
+            options={{
+              background: { color: "#020617" },
+              particles: {
+                number: { value: 50 },
+                size: { value: 3 },
+                move: { enable: true, speed: 1 },
+                links: {
+                  enable: true,
+                  distance: 150,
+                  color: "#22c55e"
+                },
+                color: { value: "#22c55e" }
+              }
+            }}
+          />
+        )}
 
-        {/* CONTENT */}
         <div
           style={{
             position: "absolute",
             top: "50%",
             left: "10%",
-            transform: "translateY(-50%)",
-            maxWidth: "600px"
+            transform: "translateY(-50%)"
           }}
         >
-          <h1 style={{ fontSize: "56px", fontWeight: "bold" }}>
-            Oracle Fusion Middleware <br />
+          <h1 style={{ fontSize: "50px" }}>
+            Oracle Middleware <br />
             Consulting Services
           </h1>
 
-          <p style={{ marginTop: "20px", color: "#cbd5f5" }}>
-            WebCenter Content, Imaging, AP Automation, SOA, OIC, EBS & OCI Experts
+          <p style={{ marginTop: "20px", color: "#ccc" }}>
+            WCC, Imaging, SOA, OIC, EBS, OCI & AI Solutions
           </p>
 
           <div style={{ marginTop: "30px", display: "flex", gap: "20px" }}>
@@ -86,7 +87,7 @@ export default function Home() {
                 background: "#22c55e",
                 padding: "12px 24px",
                 border: "none",
-                borderRadius: "8px",
+                borderRadius: "6px",
                 cursor: "pointer"
               }}
             >
@@ -101,7 +102,7 @@ export default function Home() {
                 border: "1px solid white",
                 padding: "12px 24px",
                 background: "transparent",
-                color: "#fff",
+                color: "white",
                 cursor: "pointer"
               }}
             >
@@ -111,15 +112,16 @@ export default function Home() {
         </div>
       </div>
 
-      {/* ================= SERVICES ================= */}
-      <div id="services" style={{ padding: "80px 50px", background: "#020617" }}>
-        <h2 style={{ textAlign: "center", marginBottom: "40px" }}>Our Services</h2>
+      {/* SERVICES */}
+      <div id="services" style={{ padding: "80px", background: "#020617" }}>
+        <h2 style={{ textAlign: "center" }}>Our Services</h2>
 
         <div
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(3,1fr)",
-            gap: "20px"
+            gap: "20px",
+            marginTop: "40px"
           }}
         >
           {[
@@ -132,17 +134,16 @@ export default function Home() {
           ].map((item) => (
             <div
               key={item}
-              onClick={() => alert(item + " Clicked")}
+              onClick={() => alert(item)}
               style={{
                 background: "#111",
                 padding: "20px",
-                borderRadius: "12px",
+                borderRadius: "10px",
                 cursor: "pointer",
                 transition: "0.3s"
               }}
               onMouseEnter={(e) =>
-                (e.currentTarget.style.boxShadow =
-                  "0 0 20px #22c55e")
+                (e.currentTarget.style.boxShadow = "0 0 20px #22c55e")
               }
               onMouseLeave={(e) =>
                 (e.currentTarget.style.boxShadow = "none")
@@ -154,39 +155,33 @@ export default function Home() {
         </div>
       </div>
 
-      {/* ================= CONTACT MODAL ================= */}
+      {/* CONTACT MODAL */}
       {showForm && (
         <div
           style={{
             position: "fixed",
-            top: 0,
-            left: 0,
             width: "100%",
             height: "100%",
             background: "rgba(0,0,0,0.8)",
+            top: 0,
+            left: 0,
             display: "flex",
             justifyContent: "center",
-            alignItems: "center",
-            zIndex: 20
+            alignItems: "center"
           }}
         >
-          <div style={{ background: "#111", padding: "30px", borderRadius: "10px" }}>
+          <div style={{ background: "#111", padding: "30px" }}>
             <h2>Contact Us</h2>
 
-            <input placeholder="Name" style={{ display: "block", margin: "10px 0", padding: "10px", width: "300px" }} />
-            <input placeholder="Email" style={{ display: "block", margin: "10px 0", padding: "10px", width: "300px" }} />
-            <textarea placeholder="Message" style={{ display: "block", margin: "10px 0", padding: "10px", width: "300px" }} />
+            <input placeholder="Name" style={{ display: "block", margin: "10px" }} />
+            <input placeholder="Email" style={{ display: "block", margin: "10px" }} />
+            <textarea placeholder="Message" style={{ display: "block", margin: "10px" }} />
 
-            <button style={{ background: "#22c55e", padding: "10px", border: "none" }}>
+            <button style={{ background: "#22c55e", padding: "10px" }}>
               Send
             </button>
 
-            <button
-              onClick={() => setShowForm(false)}
-              style={{ marginLeft: "10px" }}
-            >
-              Close
-            </button>
+            <button onClick={() => setShowForm(false)}>Close</button>
           </div>
         </div>
       )}
