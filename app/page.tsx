@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <div style={{ fontFamily: "Arial, sans-serif", color: "white" }}>
       
-      {/* ================= NAVBAR ================= */}
+      {/* ================= NAVBAR ================ */}
       <nav
         style={{
           position: "fixed",
