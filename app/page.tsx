@@ -78,7 +78,7 @@ export default function Home() {
             </h1>
 
             <p style={{ marginTop: "20px", color: "#ddd", maxWidth: "500px" }}>
-              WebCenter Content, Imaging, AP Automation, SOA, OIC, EBS, OCI & Generative AI Solutions
+              WebCenterContent, Imaging, AP Automation, SOA, OIC, EBS, OCI & Generative AI Solutions
             </p>
 
             <div style={{ marginTop: "30px", display: "flex", gap: "20px" }}>
