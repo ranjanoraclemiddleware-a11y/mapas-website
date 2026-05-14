@@ -6,12 +6,11 @@ export default function Home() {
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
           <div>
             <h1 className="text-5xl font-bold leading-tight mb-6">
-              MAPAS Technologies
+              Oracle Middleware & Enterprise Support Specialists
             </h1>
 
             <p className="text-xl text-gray-300 mb-6">
-              Oracle WebCenter Content (WCC), WebLogic, SOA & Enterprise
-              Production Support Services.
+              Specialized in Oracle WCC, WebLogic, SOA, IPM, OCI and Production Support Services.
             </p>
 
             <p className="text-gray-400 mb-8">
@@ -141,8 +140,8 @@ export default function Home() {
 
           <div className="space-y-4 text-lg">
             <p>📧 info@mapastech.com</p>
-            <p>📞 +91-9876543210</p>
-            <p>🌐 www.mapastech.com</p>
+            <p>📞 +91-8861064794</p>
+            <p>🌐 www.mapasgenai.com</p>
             <p>🔗 LinkedIn: MAPAS Technologies</p>
           </div>
         </div>
