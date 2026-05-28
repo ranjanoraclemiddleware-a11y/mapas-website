@@ -1,17 +1,9 @@
 import "./style.css";
 
 export default function Home() {
-  const services = [
-    "Oracle WebCenter / IPM / Capture",
-    "Oracle Integration Cloud",
-    "WebLogic & Middleware Support",
-    "Cloud & OCI Consulting",
-    "AI & Automation",
-    "Training & Consulting",
-  ];
-
   return (
     <main>
+      {/* HEADER */}
       <header className="header">
         <img src="/logo.png" className="logo" alt="MAPAS Technologies" />
 
@@ -26,9 +18,10 @@ export default function Home() {
         </a>
       </header>
 
+      {/* HERO */}
       <section className="hero">
         <div>
-          <p className="tag flow-small">
+          <p className="tag">
             Oracle • Middleware • Cloud • AI Automation
           </p>
 
@@ -42,20 +35,26 @@ export default function Home() {
             <span>Trust</span>
           </h1>
 
-          <p className="desc flow-desc">
-            <span>MAPAS Technologies helps businesses solve Oracle middleware,</span>
-            <span>integration, cloud and automation challenges</span>
-            <span>with reliable solutions.</span>
+          <p className="desc">
+            MAPAS Technologies helps businesses solve Oracle middleware,
+            integration, cloud and automation challenges with reliable
+            enterprise solutions.
           </p>
 
           <div className="buttons">
-            <a href="#contact" className="primary">Talk to an Expert</a>
-            <a href="#services" className="secondary">View Services</a>
+            <a href="#contact" className="primary">
+              Talk to an Expert
+            </a>
+
+            <a href="#services" className="secondary">
+              View Services
+            </a>
           </div>
         </div>
 
         <div className="card">
           <h2>How MAPAS Helps You</h2>
+
           <p>✅ Resolve production issues faster</p>
           <p>✅ Improve Oracle middleware stability</p>
           <p>✅ Build secure cloud integrations</p>
@@ -63,61 +62,91 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="services" className="section">
-        <h2>Our Services</h2>
+      {/* SERVICES */}
+      <section id="services" className="oracle-services">
+        <div className="service-group">
+          <h2>Infrastructure</h2>
 
-        <div className="grid">
-          {services.map((item, index) => (
-            <div
-              className="service flow-card"
-              key={item}
-              style={{ animationDelay: `${index * 0.15}s` }}
-            >
-              <h3>{item}</h3>
-              <p>
-                Professional consulting, implementation, support and
-                troubleshooting services for modern enterprises.
-              </p>
-            </div>
-          ))}
+          <div className="oracle-box-row">
+            {[
+              "Oracle WebCenter",
+              "Oracle IPM",
+              "Oracle Capture",
+              "Oracle Integration Cloud",
+            ].map((item) => (
+              <div className="oracle-box" key={item}>
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="service-group">
+          <h2>Applications</h2>
+
+          <div className="oracle-box-row">
+            {[
+              "WebLogic",
+              "SOA",
+              "Cloud & OCI",
+              "AI Automation",
+              "Training",
+              "Consulting",
+            ].map((item) => (
+              <div className="oracle-box" key={item}>
+                {item}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
+      {/* FOUNDER */}
       <section id="founder" className="founder">
-        <div className="founder-photo-wrap">
-          <img src="/rajeev.jpg" alt="Rajeev Ranjan Founder of MAPAS" className="founder-photo" />
+        <div className="founder-image-wrap">
+          <img
+            src="/rajeev.jpg"
+            alt="Rajeev Ranjan"
+            className="founder-image"
+          />
         </div>
 
         <div className="founder-content">
           <p className="tag">Founder of MAPAS</p>
+
           <h2>Rajeev Ranjan</h2>
+
           <p>
-            With strong enterprise experience in Oracle WebCenter, middleware,
-            cloud and automation, Rajeev founded MAPAS Technologies to help
-            customers solve real business technology problems with practical
-            and reliable solutions.
+            Helping enterprises solve Oracle middleware, WebCenter,
+            cloud, automation and integration challenges with
+            practical and enterprise-grade solutions.
           </p>
 
-          <div className="founder-points">
-            <span>Oracle Middleware</span>
-            <span>Cloud Consulting</span>
+          <div className="skills">
+            <span>Oracle WCC</span>
+            <span>OIC</span>
+            <span>Cloud</span>
             <span>AI Automation</span>
           </div>
         </div>
       </section>
 
-      <section id="why" className="why">
-        <h2>Why Customers Choose MAPAS</h2>
-        <p>Clear communication, strong technical depth and reliable delivery.</p>
-      </section>
-
+      {/* CONTACT */}
       <section id="contact" className="contact">
-        <h2>Need help with Oracle, Cloud or Automation?</h2>
-        <p>Contact MAPAS Technologies for expert support and consulting.</p>
-        <a href="tel:8861064794">Call MAPAS</a>
+        <h2>Need Help with Oracle or Cloud?</h2>
+
+        <p>
+          Contact MAPAS Technologies for enterprise support and consulting.
+        </p>
+
+        <a href="tel:8861064794">
+          Call MAPAS
+        </a>
       </section>
 
-      <footer>© 2026 MAPAS Technologies. Solutions. Support. Success.</footer>
+      <footer>
+        © 2026 MAPAS Technologies. Solutions. Support. Success.
+      </footer>
     </main>
   );
 }
