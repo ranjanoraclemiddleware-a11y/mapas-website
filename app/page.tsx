@@ -1,243 +1,107 @@
-"use client";
-
 export default function Home() {
   return (
-    <main
-      style={{
-        background: "#000",
-        color: "#fff",
-        minHeight: "100vh",
-        fontFamily: "Arial",
-      }}
-    >
-      {/* NAVBAR */}
-      <nav
-        style={{
-          position: "fixed",
-          top: 0,
-          width: "100%",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          padding: "22px 7%",
-          background: "rgba(0,0,0,0.75)",
-          backdropFilter: "blur(10px)",
-          zIndex: 1000,
-          boxSizing: "border-box",
-        }}
-      >
-        <h2 style={{ margin: 0 }}>MAPAS</h2>
+    <main className="min-h-screen bg-black text-white">
+      <section className="py-20 px-6">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+          <div>
+            <img src="/logo.png" alt="MAPAS Logo" className="h-10 mb-6" />
 
-        <div style={{ display: "flex", gap: "30px" }}>
-          <span
-            onClick={() =>
-              document.getElementById("services")?.scrollIntoView({
-                behavior: "smooth",
-              })
-            }
-            style={{ cursor: "pointer" }}
-          >
-            Services
-          </span>
+            <h1 className="text-5xl font-bold leading-tight mb-6">
+              Oracle Middleware, OIC & Agentic AI Specialists
+            </h1>
 
-          <span
-            onClick={() =>
-              document.getElementById("contact")?.scrollIntoView({
-                behavior: "smooth",
-              })
-            }
-            style={{ cursor: "pointer" }}
-          >
-            Contact
-          </span>
-        </div>
-      </nav>
-
-      {/* HERO SECTION */}
-      <section
-        style={{
-          minHeight: "100vh",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          padding: "120px 7% 80px",
-          gap: "60px",
-          flexWrap: "wrap",
-        }}
-      >
-        {/* LEFT CONTENT */}
-        <div style={{ maxWidth: "620px" }}>
-          <img
-            src="/logo.png"
-            alt="MAPAS"
-            style={{
-              width: "48px",
-              marginBottom: "20px",
-            }}
-          />
-
-          <h1
-            style={{
-              fontSize: "58px",
-              lineHeight: "1.15",
-              fontWeight: "800",
-              marginBottom: "30px",
-            }}
-          >
-            Enterprise Oracle Middleware, OIC <br />
-            & Agentic AI Solutions
-          </h1>
-
-          <p
-            style={{
-              fontSize: "22px",
-              lineHeight: "1.5",
-              marginBottom: "25px",
-            }}
-          >
-            Specialized in Oracle WCC, WebLogic, SOA, IPM, OIC,
-            OCI, Agentic AI and Production Support Services.
-          </p>
-
-          <p
-            style={{
-              fontSize: "17px",
-              lineHeight: "1.7",
-              color: "#b7d7f5",
-              marginBottom: "35px",
-            }}
-          >
-            Enterprise consulting for Oracle middleware,
-            content management, integration cloud,
-            automation, upgrades, migration,
-            troubleshooting and AI-driven business solutions.
-          </p>
-
-          <div style={{ display: "flex", gap: "18px" }}>
-            <button
-              onClick={() =>
-                document.getElementById("services")?.scrollIntoView({
-                  behavior: "smooth",
-                })
-              }
-              style={{
-                background: "#fff",
-                color: "#000",
-                padding: "14px 28px",
-                borderRadius: "10px",
-                border: "none",
-                fontWeight: "700",
-                fontSize: "16px",
-                cursor: "pointer",
-              }}
-            >
-              Our Services
-            </button>
-
-            <button
-              onClick={() =>
-                document.getElementById("contact")?.scrollIntoView({
-                  behavior: "smooth",
-                })
-              }
-              style={{
-                background: "transparent",
-                color: "#fff",
-                padding: "14px 28px",
-                borderRadius: "10px",
-                border: "1px solid #fff",
-                fontWeight: "700",
-                fontSize: "16px",
-                cursor: "pointer",
-              }}
-            >
-              Contact Us
-            </button>
-          </div>
-        </div>
-
-        {/* RIGHT CARD */}
-        <div
-          id="services"
-          style={{
-            background: "#1b1b1b",
-            border: "1px solid #333",
-            borderRadius: "24px",
-            padding: "38px",
-            width: "460px",
-            boxShadow: "0 0 30px rgba(255,255,255,0.05)",
-          }}
-        >
-          <h2
-            style={{
-              fontSize: "28px",
-              marginBottom: "28px",
-            }}
-          >
-            Enterprise Expertise
-          </h2>
-
-          {[
-            "Oracle WebCenter Content (WCC)",
-            "Oracle IPM / Capture",
-            "Oracle Integration Cloud (OIC)",
-            "SOA Suite & API Integration",
-            "OCI Cloud Services",
-            "Agentic AI Solutions",
-            "Migration & Upgrades",
-            "Performance Tuning",
-          ].map((item) => (
-            <p
-              key={item}
-              style={{
-                fontSize: "17px",
-                marginBottom: "18px",
-                color: "#ddd",
-              }}
-            >
-              ✓ {item}
+            <p className="text-xl text-gray-300 mb-6">
+              Specialized in Oracle WCC, WebLogic, SOA, IPM, OIC, OCI, Agentic AI and Production Support Services.
             </p>
-          ))}
+
+            <p className="text-gray-400 mb-8">
+              Specialized consulting for Oracle middleware, content management,
+              troubleshooting, upgrades, migration, enterprise integration and AI-driven automation.
+            </p>
+
+            <div className="flex gap-4 flex-wrap">
+              <a href="#services" className="bg-white text-black px-6 py-3 rounded-xl font-semibold">
+                Our Services
+              </a>
+              <a href="#contact" className="border border-white px-6 py-3 rounded-xl">
+                Contact Us
+              </a>
+            </div>
+          </div>
+
+          <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/10 shadow-2xl">
+            <h2 className="text-2xl font-semibold mb-4">Enterprise Expertise</h2>
+            <ul className="space-y-3 text-gray-300">
+              <li>✔ Oracle WebCenter Content (WCC)</li>
+              <li>✔ Oracle IPM / Capture</li>
+              <li>✔ Oracle Integration Cloud (OIC)</li>
+              <li>✔ WebLogic Administration</li>
+              <li>✔ SOA Suite Troubleshooting</li>
+              <li>✔ OCI Cloud Services</li>
+              <li>✔ Agentic AI Solutions</li>
+              <li>✔ Production Support</li>
+              <li>✔ Migration & Upgrades</li>
+              <li>✔ Performance Tuning</li>
+            </ul>
+          </div>
         </div>
       </section>
 
-      {/* CONTACT SECTION */}
-      <section
-        id="contact"
-        style={{
-          padding: "80px 7%",
-          background: "#0d0d0d",
-          borderTop: "1px solid #222",
-        }}
-      >
-        <h2
-          style={{
-            fontSize: "36px",
-            marginBottom: "25px",
-          }}
-        >
-          Contact Us
-        </h2>
+      <section id="about" className="py-20 px-6 bg-[#0d0d0d]">
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-6">About MAPAS</h2>
+          <p className="text-lg text-gray-300 leading-8">
+            MAPAS Technologies focuses on Oracle enterprise solutions,
+            especially Oracle WebCenter Content, WebLogic Server, SOA, OIC,
+            OCI and enterprise middleware support.
+          </p>
+          <p className="text-lg text-gray-400 leading-8 mt-6">
+            We help businesses manage production systems, resolve critical
+            incidents, perform upgrades, improve enterprise application
+            stability and adopt AI-driven automation.
+          </p>
+        </div>
+      </section>
 
-        <p
-          style={{
-            color: "#ccc",
-            fontSize: "18px",
-            marginBottom: "12px",
-          }}
-        >
-          Email: ranjanofm@gmail.com
-        </p>
+      <section id="services" className="py-20 px-6 bg-black">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-14">Our Services</h2>
 
-        <p
-          style={{
-            color: "#aaa",
-            fontSize: "16px",
-          }}
-        >
-          Oracle Middleware, OIC, WCC, SOA, OCI &
-          Agentic AI Consulting Services
-        </p>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { title: "Oracle WCC Support", desc: "Production support, troubleshooting, integrations and administration." },
+              { title: "Oracle Integration Cloud (OIC)", desc: "Enterprise integrations, APIs, application connectivity and automation flows." },
+              { title: "WebLogic Administration", desc: "Server setup, patching, performance tuning and monitoring." },
+              { title: "SOA & Middleware", desc: "SOA Suite troubleshooting, deployments and enterprise integrations." },
+              { title: "OCI Cloud Services", desc: "Oracle Cloud infrastructure guidance, migration and environment support." },
+              { title: "Agentic AI Solutions", desc: "AI-driven automation, intelligent workflows and enterprise GenAI enablement." },
+              { title: "Upgrade & Migration", desc: "Version upgrades, migration planning and execution support." },
+              { title: "Incident Management", desc: "Critical production issue analysis and resolution support." },
+              { title: "Consulting Services", desc: "Architecture guidance and Oracle middleware best practices." },
+            ].map((service, index) => (
+              <div key={index} className="bg-[#1b1b1b] p-8 rounded-3xl border border-white/10 shadow-md">
+                <h3 className="text-2xl font-semibold mb-4">{service.title}</h3>
+                <p className="text-gray-400 leading-7">{service.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="py-20 px-6 bg-[#0d0d0d] text-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-6">Contact Us</h2>
+          <p className="text-gray-300 text-lg mb-8">
+            Looking for Oracle middleware, OIC, OCI or Agentic AI consulting support?
+          </p>
+
+          <div className="space-y-4 text-lg">
+            <p>📧 info@mapastech.com</p>
+            <p>📞 +91-8861064794</p>
+            <p>🌐 www.mapasgenai.com</p>
+            <p>🔗 LinkedIn: MAPAS Technologies</p>
+          </div>
+        </div>
       </section>
     </main>
   );
