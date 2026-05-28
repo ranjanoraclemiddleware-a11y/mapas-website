@@ -72,13 +72,13 @@ export default function Home() {
                 href="#contact"
                 className="rounded-xl bg-cyan-400 px-8 py-4 font-bold text-slate-950 hover:bg-cyan-300"
               >
-                Contact Us
+                Hire MAPAS Experts
               </a>
               <a
                 href="#services"
                 className="rounded-xl border border-white/20 px-8 py-4 font-semibold hover:bg-white/10"
               >
-                Explore Services
+               Join Expert Network
               </a>
             </div>
           </div>
