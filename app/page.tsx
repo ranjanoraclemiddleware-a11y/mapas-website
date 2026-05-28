@@ -72,13 +72,13 @@ export default function Home() {
           }}
         >
           <div>
-            <h1 style={{ fontSize: "56px", fontWeight: "bold", lineHeight: "1.2" }}>
-              Oracle Middleware <br />
-              Consulting Services
-            </h1>
+           <h1 style={{ fontSize: "56px", fontWeight: "bold", lineHeight: "1.2" }}>
+  Enterprise Oracle Middleware, OIC <br />
+  & Agentic AI Solutions
+</h1>
 
             <p style={{ marginTop: "20px", color: "#ddd", maxWidth: "500px" }}>
-              WebCenterContent, Imaging, AP Automation, SOA, OIC, EBS, OCI & Generative AI Solutions
+              Oracle WCC, Imaging/IPM, OIC, SOA, OCI, EBS, AP Automation, Agentic AI & Enterprise Integration Solutions
             </p>
 
             <div style={{ marginTop: "30px", display: "flex", gap: "20px" }}>
