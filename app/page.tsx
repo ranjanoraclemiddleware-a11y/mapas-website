@@ -17,12 +17,12 @@ export default function Home() {
 
         <nav>
           <a href="#services">Services</a>
-          <a href="#why">Why MAPAS</a>
+          <a href="#founder">Founder</a>
           <a href="#contact">Contact</a>
         </nav>
 
         <a className="call" href="tel:8861064794">
-          Call 8861064794
+          Call MAPAS
         </a>
       </header>
 
@@ -49,12 +49,8 @@ export default function Home() {
           </p>
 
           <div className="buttons">
-            <a href="#contact" className="primary">
-              Talk to an Expert
-            </a>
-            <a href="#services" className="secondary">
-              View Services
-            </a>
+            <a href="#contact" className="primary">Talk to an Expert</a>
+            <a href="#services" className="secondary">View Services</a>
           </div>
         </div>
 
@@ -72,7 +68,11 @@ export default function Home() {
 
         <div className="grid">
           {services.map((item, index) => (
-            <div className="service flow-card" key={item} style={{ animationDelay: `${index * 0.15}s` }}>
+            <div
+              className="service flow-card"
+              key={item}
+              style={{ animationDelay: `${index * 0.15}s` }}
+            >
               <h3>{item}</h3>
               <p>
                 Professional consulting, implementation, support and
@@ -80,6 +80,29 @@ export default function Home() {
               </p>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section id="founder" className="founder">
+        <div className="founder-photo-wrap">
+          <img src="/rajeev.jpg" alt="Rajeev Ranjan Founder of MAPAS" className="founder-photo" />
+        </div>
+
+        <div className="founder-content">
+          <p className="tag">Founder of MAPAS</p>
+          <h2>Rajeev Ranjan</h2>
+          <p>
+            With strong enterprise experience in Oracle WebCenter, middleware,
+            cloud and automation, Rajeev founded MAPAS Technologies to help
+            customers solve real business technology problems with practical
+            and reliable solutions.
+          </p>
+
+          <div className="founder-points">
+            <span>Oracle Middleware</span>
+            <span>Cloud Consulting</span>
+            <span>AI Automation</span>
+          </div>
         </div>
       </section>
 
@@ -91,7 +114,7 @@ export default function Home() {
       <section id="contact" className="contact">
         <h2>Need help with Oracle, Cloud or Automation?</h2>
         <p>Contact MAPAS Technologies for expert support and consulting.</p>
-        <a href="tel:8861064794">Call 8861064794</a>
+        <a href="tel:8861064794">Call MAPAS</a>
       </section>
 
       <footer>© 2026 MAPAS Technologies. Solutions. Support. Success.</footer>
