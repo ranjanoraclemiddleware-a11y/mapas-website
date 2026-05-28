@@ -1,29 +1,60 @@
 import "./style.css";
 
 export default function Home() {
+  const services = [
+    "Oracle WebCenter / IPM / Capture",
+    "Oracle Integration Cloud",
+    "WebLogic & Middleware Support",
+    "Cloud & OCI Consulting",
+    "AI & Automation",
+    "Training & Consulting",
+  ];
+
   return (
     <main>
       <header className="header">
-        <img src="/logo.png" className="logo" />
+        <img src="/logo.png" className="logo" alt="MAPAS Technologies" />
+
         <nav>
           <a href="#services">Services</a>
           <a href="#why">Why MAPAS</a>
           <a href="#contact">Contact</a>
         </nav>
-        <a className="call" href="tel:8861064794">Call 8861064794</a>
+
+        <a className="call" href="tel:8861064794">
+          Call 8861064794
+        </a>
       </header>
 
       <section className="hero">
         <div>
-          <p className="tag">Oracle • Middleware • Cloud • AI Automation</p>
-          <h1>Enterprise Technology Support That Customers Can Trust</h1>
-          <p className="desc">
-            MAPAS Technologies helps businesses solve Oracle middleware,
-            integration, cloud and automation challenges with reliable solutions.
+          <p className="tag flow-small">
+            Oracle • Middleware • Cloud • AI Automation
           </p>
+
+          <h1 className="flow-title">
+            <span>Enterprise</span>
+            <span>Technology</span>
+            <span>Support</span>
+            <span>That</span>
+            <span>Customers</span>
+            <span>Can</span>
+            <span>Trust</span>
+          </h1>
+
+          <p className="desc flow-desc">
+            <span>MAPAS Technologies helps businesses solve Oracle middleware,</span>
+            <span>integration, cloud and automation challenges</span>
+            <span>with reliable solutions.</span>
+          </p>
+
           <div className="buttons">
-            <a href="#contact" className="primary">Talk to an Expert</a>
-            <a href="#services" className="secondary">View Services</a>
+            <a href="#contact" className="primary">
+              Talk to an Expert
+            </a>
+            <a href="#services" className="secondary">
+              View Services
+            </a>
           </div>
         </div>
 
@@ -38,18 +69,15 @@ export default function Home() {
 
       <section id="services" className="section">
         <h2>Our Services</h2>
+
         <div className="grid">
-          {[
-            "Oracle WebCenter / IPM / Capture",
-            "Oracle Integration Cloud",
-            "WebLogic & Middleware Support",
-            "Cloud & OCI Consulting",
-            "AI & Automation",
-            "Training & Consulting",
-          ].map((item) => (
-            <div className="service" key={item}>
+          {services.map((item, index) => (
+            <div className="service flow-card" key={item} style={{ animationDelay: `${index * 0.15}s` }}>
               <h3>{item}</h3>
-              <p>Professional consulting, implementation, support and troubleshooting services.</p>
+              <p>
+                Professional consulting, implementation, support and
+                troubleshooting services for modern enterprises.
+              </p>
             </div>
           ))}
         </div>
@@ -62,6 +90,7 @@ export default function Home() {
 
       <section id="contact" className="contact">
         <h2>Need help with Oracle, Cloud or Automation?</h2>
+        <p>Contact MAPAS Technologies for expert support and consulting.</p>
         <a href="tel:8861064794">Call 8861064794</a>
       </section>
 
