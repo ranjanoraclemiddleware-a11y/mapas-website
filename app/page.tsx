@@ -5,6 +5,7 @@ export default function Home() {
       <section className="bg-black text-white py-20 px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
           <div>
+            <img src="/logo.png" alt="MAPAS Logo" className="h-10" />
             <h1 className="text-5xl font-bold leading-tight mb-6">
               Oracle Middleware & Enterprise Support Specialists
             </h1>
