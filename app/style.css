@@ -13,7 +13,6 @@ body {
   background: white;
 }
 
-/* HEADER */
 .header {
   display: flex;
   align-items: center;
@@ -40,11 +39,6 @@ nav a {
   color: #1e293b;
   text-decoration: none;
   font-weight: 700;
-  transition: 0.3s ease;
-}
-
-nav a:hover {
-  color: #2563eb;
 }
 
 .call {
@@ -54,53 +48,28 @@ nav a:hover {
   border-radius: 50px;
   text-decoration: none;
   font-weight: bold;
-  transition: 0.3s ease;
 }
 
-.call:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.25);
-}
-
-/* HERO */
 .hero {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: 60px;
   padding: 90px 60px;
-  background: linear-gradient(
-    135deg,
-    #eef6ff 0%,
-    #ffffff 45%,
-    #f0fdff 100%
-  );
+  background: linear-gradient(135deg, #eef6ff, #ffffff, #f0fdff);
   position: relative;
   overflow: hidden;
 }
 
-/* Animated glow background */
 .hero::before {
   content: "";
   position: absolute;
   width: 550px;
   height: 550px;
-  background: rgba(37, 99, 235, 0.08);
+  background: rgba(37, 99, 235, 0.1);
   border-radius: 50%;
-  right: -100px;
-  top: 20px;
+  right: -120px;
+  top: 30px;
   animation: floatGlow 7s ease-in-out infinite;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  width: 350px;
-  height: 350px;
-  background: rgba(6, 182, 212, 0.08);
-  border-radius: 50%;
-  left: -100px;
-  bottom: -100px;
-  animation: floatGlow2 8s ease-in-out infinite;
 }
 
 .hero > div {
@@ -114,12 +83,29 @@ nav a:hover {
   font-size: 18px;
 }
 
-h1 {
+.flow-title {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
   font-size: 70px;
   line-height: 1.05;
   margin: 18px 0;
   color: #0f172a;
 }
+
+.flow-title span {
+  display: inline-block;
+  opacity: 0;
+  animation: wordFlow 0.8s ease forwards;
+}
+
+.flow-title span:nth-child(1) { animation-delay: 0.1s; }
+.flow-title span:nth-child(2) { animation-delay: 0.25s; }
+.flow-title span:nth-child(3) { animation-delay: 0.4s; }
+.flow-title span:nth-child(4) { animation-delay: 0.55s; }
+.flow-title span:nth-child(5) { animation-delay: 0.7s; }
+.flow-title span:nth-child(6) { animation-delay: 0.85s; }
+.flow-title span:nth-child(7) { animation-delay: 1s; }
 
 .desc {
   font-size: 22px;
@@ -127,6 +113,16 @@ h1 {
   color: #475569;
   max-width: 700px;
 }
+
+.flow-desc span {
+  display: block;
+  opacity: 0;
+  animation: lineFlow 0.8s ease forwards;
+}
+
+.flow-desc span:nth-child(1) { animation-delay: 1.2s; }
+.flow-desc span:nth-child(2) { animation-delay: 1.45s; }
+.flow-desc span:nth-child(3) { animation-delay: 1.7s; }
 
 .buttons {
   display: flex;
@@ -140,17 +136,11 @@ h1 {
   border-radius: 14px;
   text-decoration: none;
   font-weight: bold;
-  transition: 0.3s ease;
 }
 
 .primary {
   background: linear-gradient(135deg, #2563eb, #1d4ed8);
   color: white;
-}
-
-.primary:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.3);
 }
 
 .secondary {
@@ -159,16 +149,8 @@ h1 {
   background: white;
 }
 
-.secondary:hover {
-  transform: translateY(-4px);
-  border-color: #2563eb;
-  color: #2563eb;
-}
-
-/* HERO CARD */
 .card {
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(20px);
+  background: rgba(255,255,255,0.9);
   padding: 40px;
   border-radius: 35px;
   box-shadow: 0 25px 60px rgba(15, 23, 42, 0.12);
@@ -176,7 +158,7 @@ h1 {
 }
 
 .card h2 {
-  font-size: 44px;
+  font-size: 34px;
 }
 
 .card p {
@@ -185,15 +167,8 @@ h1 {
   border-radius: 18px;
   font-weight: 600;
   margin-top: 18px;
-  transition: 0.3s ease;
 }
 
-.card p:hover {
-  transform: translateX(10px);
-  background: #dbeafe;
-}
-
-/* SERVICES */
 .section {
   padding: 100px 60px;
 }
@@ -214,28 +189,30 @@ h1 {
   padding: 35px;
   border-radius: 30px;
   background: white;
-  transition: 0.4s ease;
   box-shadow: 0 10px 25px rgba(15,23,42,0.05);
+  transition: 0.4s ease;
 }
 
 .service:hover {
   transform: translateY(-12px);
   box-shadow: 0 30px 60px rgba(15,23,42,0.12);
-  border-color: #93c5fd;
+}
+
+.flow-card {
+  opacity: 0;
+  animation: cardFlow 0.8s ease forwards;
 }
 
 .service h3 {
   color: #1e3a8a;
-  font-size: 28px;
+  font-size: 26px;
 }
 
 .service p {
   color: #475569;
   line-height: 1.8;
-  font-size: 17px;
 }
 
-/* WHY SECTION */
 .why {
   background: linear-gradient(135deg, #0f172a, #111827);
   color: white;
@@ -251,7 +228,6 @@ h1 {
   color: #cbd5e1;
 }
 
-/* CONTACT */
 .contact {
   margin: 90px 60px;
   padding: 60px;
@@ -274,14 +250,8 @@ h1 {
   border-radius: 14px;
   text-decoration: none;
   font-weight: bold;
-  transition: 0.3s ease;
 }
 
-.contact a:hover {
-  transform: translateY(-4px);
-}
-
-/* FOOTER */
 footer {
   text-align: center;
   padding: 30px;
@@ -289,47 +259,77 @@ footer {
   color: #64748b;
 }
 
-/* ANIMATIONS */
+@keyframes wordFlow {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes lineFlow {
+  from {
+    opacity: 0;
+    transform: translateX(-35px);
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes cardFlow {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes floatingCard {
   0%,100% {
-    transform: translateY(0px);
+    transform: translateY(0);
   }
   50% {
-    transform: translateY(-12px);
+    transform: translateY(-14px);
   }
 }
 
 @keyframes floatGlow {
   0%,100% {
-    transform: translateY(0px);
+    transform: translateY(0);
   }
   50% {
-    transform: translateY(30px);
+    transform: translateY(35px);
   }
 }
 
-@keyframes floatGlow2 {
-  0%,100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-30px);
-  }
-}
-
-/* MOBILE */
 @media (max-width: 900px) {
   .hero,
   .grid {
     grid-template-columns: 1fr;
   }
 
-  h1 {
-    font-size: 48px;
+  .flow-title {
+    font-size: 46px;
   }
 
   .header {
     padding: 18px 25px;
+  }
+
+  nav {
+    display: none;
   }
 
   .hero,
@@ -341,9 +341,5 @@ footer {
   .contact {
     margin: 30px 25px;
     padding: 35px;
-  }
-
-  nav {
-    display: none;
   }
 }
