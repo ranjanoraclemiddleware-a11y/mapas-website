@@ -1,179 +1,209 @@
 export default function Home() {
   const services = [
     {
-      title: "Oracle WebCenter",
-      desc: "Implementation, troubleshooting, migration, and support for Oracle WCC, IPM and Capture.",
+      title: "Oracle WebCenter / IPM / Capture",
+      desc: "Implementation, support, troubleshooting, migration and performance tuning for Oracle WCC, IPM and Capture.",
     },
     {
       title: "Oracle Integration Cloud",
-      desc: "OIC integrations, APIs, adapters, process automation and enterprise connectivity.",
+      desc: "Build secure integrations using OIC, APIs, adapters, process automation and enterprise connectivity.",
     },
     {
-      title: "Cloud & OCI",
-      desc: "Cloud-ready architecture, deployment support, migration planning and infrastructure guidance.",
+      title: "WebLogic & Middleware Support",
+      desc: "Support for WebLogic, SOA, BPM, deployments, patching, monitoring and production issue resolution.",
     },
     {
-      title: "AI Automation",
-      desc: "AI-powered workflow automation, document intelligence and business productivity solutions.",
+      title: "Cloud & OCI Consulting",
+      desc: "Cloud migration planning, OCI guidance, architecture review and deployment support.",
     },
     {
-      title: "Middleware Support",
-      desc: "WebLogic, SOA, BPM, AIA, deployments, patches, performance and issue resolution.",
+      title: "AI & Automation",
+      desc: "Automate business workflows, document processing and repetitive enterprise tasks using AI solutions.",
     },
     {
-      title: "Consulting & Training",
-      desc: "Practical enterprise consulting, technical support and hands-on training.",
+      title: "Training & Consulting",
+      desc: "Hands-on technical consulting, team enablement and practical enterprise training.",
     },
   ];
 
   return (
-    <main className="min-h-screen bg-slate-950 text-white">
-      <header className="sticky top-0 z-50 bg-slate-950/90 backdrop-blur border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <a href="#" className="flex items-center gap-3">
-            <img src="/logo.png" alt="MAPAS Technologies" className="h-14 w-auto" />
+    <main className="min-h-screen bg-white text-slate-900">
+      {/* Header */}
+      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+          <a href="#" className="flex items-center">
+            <img src="/logo.png" alt="MAPAS Technologies" className="h-16 w-auto" />
           </a>
 
-          <nav className="hidden md:flex gap-8 text-sm text-slate-300">
-            <a href="#services" className="hover:text-cyan-400">Services</a>
-            <a href="#about" className="hover:text-cyan-400">About</a>
-            <a href="#contact" className="hover:text-cyan-400">Contact Us</a>
+          <nav className="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-700">
+            <a href="#services" className="hover:text-blue-700">Services</a>
+            <a href="#why" className="hover:text-blue-700">Why MAPAS</a>
+            <a href="#contact" className="hover:text-blue-700">Contact</a>
           </nav>
 
           <a
             href="tel:8861064794"
-            className="rounded-full bg-cyan-400 px-5 py-2 text-sm font-bold text-slate-950 hover:bg-cyan-300"
+            className="rounded-full bg-blue-700 px-5 py-3 text-sm font-bold text-white hover:bg-blue-800"
           >
-            📞 8861064794
+            Call 8861064794
           </a>
         </div>
       </header>
 
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,#0ea5e966,transparent_35%),radial-gradient(circle_at_bottom_left,#2563eb66,transparent_35%)]" />
-
-        <div className="relative max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-14 items-center">
+      {/* Hero */}
+      <section className="bg-gradient-to-br from-blue-50 via-white to-cyan-50">
+        <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-20 lg:grid-cols-2">
           <div>
-            <p className="text-cyan-300 font-semibold mb-5">
-              Enterprise Middleware • Cloud • AI Automation
+            <p className="mb-4 font-bold text-blue-700">
+              Oracle • Middleware • Cloud • AI Automation
             </p>
 
-            <h1 className="text-5xl md:text-7xl font-extrabold leading-tight">
-              Modern Middleware & AI Solutions for Enterprise Growth
+            <h1 className="text-4xl font-extrabold leading-tight text-slate-950 md:text-6xl">
+              Enterprise Technology Support That Customers Can Trust
             </h1>
 
-            <p className="mt-7 text-xl text-slate-300 leading-8">
-              MAPAS Technologies helps businesses transform, integrate and scale
-              with Oracle expertise, cloud solutions and intelligent automation.
+            <p className="mt-6 text-lg leading-8 text-slate-600">
+              MAPAS Technologies helps businesses solve Oracle middleware,
+              integration, cloud and automation challenges with practical,
+              reliable and cost-effective solutions.
             </p>
 
-            <div className="mt-10 flex flex-wrap gap-4">
+            <div className="mt-8 flex flex-wrap gap-4">
               <a
                 href="#contact"
-                className="rounded-xl bg-cyan-400 px-8 py-4 font-bold text-slate-950 hover:bg-cyan-300"
+                className="rounded-xl bg-blue-700 px-8 py-4 font-bold text-white hover:bg-blue-800"
               >
-                Hire MAPAS Experts
+                Talk to an Expert
               </a>
+
               <a
                 href="#services"
-                className="rounded-xl border border-white/20 px-8 py-4 font-semibold hover:bg-white/10"
+                className="rounded-xl border border-slate-300 bg-white px-8 py-4 font-bold text-slate-800 hover:border-blue-700 hover:text-blue-700"
               >
-               Join Expert Network
+                View Services
               </a>
             </div>
           </div>
 
-          <div className="rounded-[2rem] border border-white/10 bg-white/10 p-6 shadow-2xl">
-            <img
-              src="/logo.png"
-              alt="MAPAS Logo"
-              className="mx-auto max-h-72 w-full object-contain rounded-3xl bg-white p-8"
-            />
-            <div className="mt-6 grid grid-cols-2 gap-4 text-center">
-              <div className="rounded-2xl bg-slate-900 p-5">
-                <h3 className="text-3xl font-bold text-cyan-300">15+</h3>
-                <p className="text-slate-400">Years Experience</p>
-              </div>
-              <div className="rounded-2xl bg-slate-900 p-5">
-                <h3 className="text-3xl font-bold text-cyan-300">24/7</h3>
-                <p className="text-slate-400">Support Focus</p>
-              </div>
+          <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-xl">
+            <h2 className="text-2xl font-extrabold text-slate-950">
+              How MAPAS Helps You
+            </h2>
+
+            <div className="mt-6 space-y-4">
+              {[
+                "Resolve production issues faster",
+                "Improve Oracle middleware stability",
+                "Build secure cloud integrations",
+                "Automate manual business workflows",
+              ].map((item) => (
+                <div key={item} className="rounded-2xl bg-blue-50 p-5 font-semibold text-slate-700">
+                  ✅ {item}
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-4 gap-5">
-        {["Oracle Expertise", "Cloud Ready", "AI Automation", "Reliable Support"].map((item) => (
-          <div key={item} className="rounded-3xl border border-white/10 bg-white/5 p-6">
-            <h3 className="text-xl font-bold text-cyan-300">{item}</h3>
-            <p className="mt-3 text-slate-400">
-              Enterprise-grade technology solutions for modern businesses.
-            </p>
+      {/* Trust Bar */}
+      <section className="border-y border-slate-200 bg-slate-50">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-6 py-10 text-center md:grid-cols-4">
+          <div>
+            <h3 className="text-3xl font-extrabold text-blue-700">15+</h3>
+            <p className="text-sm text-slate-600">Years Experience</p>
           </div>
-        ))}
+          <div>
+            <h3 className="text-3xl font-extrabold text-blue-700">Oracle</h3>
+            <p className="text-sm text-slate-600">Middleware Expertise</p>
+          </div>
+          <div>
+            <h3 className="text-3xl font-extrabold text-blue-700">Cloud</h3>
+            <p className="text-sm text-slate-600">Ready Solutions</p>
+          </div>
+          <div>
+            <h3 className="text-3xl font-extrabold text-blue-700">24/7</h3>
+            <p className="text-sm text-slate-600">Support Focus</p>
+          </div>
+        </div>
       </section>
 
-      <section id="services" className="max-w-7xl mx-auto px-6 py-24">
-        <p className="text-cyan-300 uppercase tracking-widest font-semibold">
-          Our Services
-        </p>
-        <h2 className="mt-4 text-4xl md:text-5xl font-extrabold">
-          Technology Services for Modern Enterprises
-        </h2>
+      {/* Services */}
+      <section id="services" className="mx-auto max-w-7xl px-6 py-20">
+        <div className="max-w-3xl">
+          <p className="font-bold uppercase tracking-widest text-blue-700">
+            Our Services
+          </p>
+          <h2 className="mt-3 text-4xl font-extrabold text-slate-950">
+            Practical enterprise IT services for real business problems
+          </h2>
+        </div>
 
-        <div className="mt-12 grid md:grid-cols-2 xl:grid-cols-3 gap-7">
+        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
             <div
               key={service.title}
-              className="rounded-3xl border border-white/10 bg-slate-900 p-8 hover:border-cyan-400 transition"
+              className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm hover:shadow-xl transition"
             >
-              <h3 className="text-2xl font-bold">{service.title}</h3>
-              <p className="mt-4 text-slate-400 leading-7">{service.desc}</p>
+              <h3 className="text-xl font-extrabold text-slate-950">
+                {service.title}
+              </h3>
+              <p className="mt-4 leading-7 text-slate-600">
+                {service.desc}
+              </p>
             </div>
           ))}
         </div>
       </section>
 
-      <section id="about" className="bg-white text-slate-950">
-        <div className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-12 items-center">
+      {/* Why */}
+      <section id="why" className="bg-slate-950 text-white">
+        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-2">
           <div>
-            <p className="text-blue-700 uppercase tracking-widest font-semibold">
-              Why MAPAS
+            <p className="font-bold uppercase tracking-widest text-cyan-300">
+              Why Customers Choose MAPAS
             </p>
-            <h2 className="mt-4 text-4xl md:text-5xl font-extrabold">
-              Reliable technology partner for business transformation
+            <h2 className="mt-4 text-4xl font-extrabold">
+              Clear communication, strong technical depth and reliable delivery
             </h2>
           </div>
 
-          <div className="grid gap-4 text-lg">
-            <p>✅ Enterprise-grade Oracle expertise</p>
-            <p>✅ Fast issue analysis and resolution</p>
-            <p>✅ Cloud and AI focused approach</p>
-            <p>✅ Flexible support model</p>
+          <div className="grid gap-4">
+            {[
+              "Deep Oracle middleware and WebCenter experience",
+              "Fast troubleshooting and RCA support",
+              "Cloud and AI-ready solution approach",
+              "Flexible support for startups and enterprises",
+            ].map((item) => (
+              <div key={item} className="rounded-2xl bg-white/10 p-5">
+                ✅ {item}
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section id="contact" className="max-w-7xl mx-auto px-6 py-24">
-        <div className="rounded-[2.5rem] bg-gradient-to-r from-cyan-400 to-blue-600 p-10 md:p-16 text-slate-950">
-          <h2 className="text-4xl md:text-5xl font-extrabold">
-            Let’s build your digital platform
+      {/* Contact */}
+      <section id="contact" className="mx-auto max-w-7xl px-6 py-20">
+        <div className="rounded-3xl bg-blue-700 p-10 text-white md:p-14">
+          <h2 className="text-4xl font-extrabold">
+            Need help with Oracle, Cloud or Automation?
           </h2>
-          <p className="mt-4 text-xl">
-            Contact MAPAS for Oracle, middleware, cloud and AI services.
+          <p className="mt-4 text-lg text-blue-100">
+            Contact MAPAS Technologies today for expert technical support and consulting.
           </p>
 
-          <div className="mt-10 flex flex-wrap gap-4">
+          <div className="mt-8 flex flex-wrap gap-4">
             <a
               href="tel:8861064794"
-              className="rounded-xl bg-slate-950 px-8 py-4 font-bold text-white"
+              className="rounded-xl bg-white px-8 py-4 font-bold text-blue-700"
             >
               Call 8861064794
             </a>
+
             <a
               href="mailto:info@mapastech.com"
-              className="rounded-xl border border-slate-950 px-8 py-4 font-bold"
+              className="rounded-xl border border-white px-8 py-4 font-bold text-white"
             >
               Email Us
             </a>
@@ -181,7 +211,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="border-t border-white/10 py-8 text-center text-slate-400">
+      <footer className="border-t border-slate-200 py-8 text-center text-slate-500">
         © 2026 MAPAS Technologies. Solutions. Support. Success.
       </footer>
     </main>
